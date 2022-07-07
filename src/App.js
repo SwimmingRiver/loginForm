@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Routers from "./Routers";
+import { userInfoContext } from './Context';
+
 
 function App() {
+  const [userInfo,setUserInfo]=useState({id:"",pw:"",grade:"",name:""});
+  const [userList,setUserList]=useState([
+    {id:"one",pw:"1",grade:"1",name:"uno"},
+    {id:"two",pw:"2",grade:"1",name:"dos"}
+  ]);
+  const [onList,setOnList]=useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ <>
+  <h1>Login Form</h1>  
+  <userInfoContext.Provider value={{userInfo,setUserInfo,userList,setUserList,onList,setOnList}}>
+  <Routers/>
+  </userInfoContext.Provider>
+ </>
   );
 }
 
