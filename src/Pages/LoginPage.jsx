@@ -1,9 +1,59 @@
 import { useContext,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userInfoContext } from './../Context';
+import styled from "styled-components";
+
+const PageTitle = styled.h2`
+  color: #00d167;
+  font-size: 2em;
+`;
+
+const LoginBtn = styled.button`
+    /* width: 15vw; */
+     // background: $yellow;
+     box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #2ecc71;
+  border-radius: 0.6em;
+  color: #2ecc71;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 10px;
+  padding: 1.0em 2.5em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+
+  &:hover,
+  &:focus {
+    color:green;
+    outline: 0;
+  
+  border-color: green;
+  color:green;
+  background: {
+    image: linear-gradient(45deg,#2ecc71 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  background-position: 0;
+}
+  &:hover {
+    
+  }
+`;
+
 
 function LoginPage(){
-    const {userInfo,setUserInfo,userList,setOnList,onList,setLoginToggle}=useContext(userInfoContext);
+    const {setUserInfo,userList,setOnList,onList,setLoginToggle}=useContext(userInfoContext);
     const [idLog,setIdLog]=useState();
     const [pwLog,setPwLog]=useState();
     const Navigate = useNavigate()
@@ -38,10 +88,10 @@ function LoginPage(){
         setPwLog("");
     }
     return<>
-    <h1>LoginPage</h1>
+    <PageTitle>LoginPage</PageTitle>
     <input value={idLog||""} placeholder="id" onChange={(e)=>{setIdLog(e.target.value)}}/>
     <input type="password"  value={pwLog||""} placeholder="pw" onChange={(e)=>{setPwLog(e.target.value)}}/>
-    <button onClick={Login}>Login</button>
+    <LoginBtn onClick={Login}>Login</LoginBtn>
     </>
 }
 export default LoginPage;

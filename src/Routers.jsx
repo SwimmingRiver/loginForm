@@ -10,15 +10,18 @@ function Routers(){
     
     const StyleLink = styled(Link)`
         text-decoration: none;
-        color: limegreen;
+        color: #00d167;
         font-size: 2em;
-        border: solid 1px black;
         width:50vw;
         height:8vh;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        &:hover{
+            background-color: whitesmoke;
+            transition: 1s;
+        }
     `;
     const LinkMenu = styled.ul`
         border: 1px solid black;

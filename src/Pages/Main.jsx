@@ -1,16 +1,15 @@
 
 import { useContext } from 'react';
 import { userInfoContext } from './../Context';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import styled from 'styled-components';
 
 const PageTitle = styled.h2`
-  color: green;
+  color: #00d167;
   font-size: 2em;
 `;
 const Greet = styled.h2`
     font-size: 2em;
+    color:whitesmoke;
 `;
 function Main(){    
     const {onList,userList}=useContext(userInfoContext);

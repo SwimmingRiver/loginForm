@@ -1,5 +1,5 @@
 
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { userInfoContext } from './../Context';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 
 const PageTitle = styled.h2`
-  color: green;
+  color: #00d167;
   font-size: 2em;
 `;
 const InputWrapper =styled.div`
@@ -17,7 +17,6 @@ const InputWrapper =styled.div`
     flex-direction: column;
     justify-content:space-around;
     align-items: center;
-    border: solid 1px black;
 `;
 const JoinInput = styled.input`
     width: 15vw;
@@ -67,7 +66,7 @@ const JoinBtn = styled.button`
 
 `
 function JoinPage(){
-    const {userInfo,setUserInfo,userList,setUserList,onList}=useContext(userInfoContext);
+    const {userInfo,setUserInfo,userList,setUserList}=useContext(userInfoContext);
     const [id,setId]=useState("");
     const [password,setPassword]=useState("");
     const [rePassword,setRePassword]=useState("");
