@@ -1,7 +1,6 @@
 
 import { useContext } from 'react';
 import { userInfoContext } from './../Context';
-import { useState } from 'react';
 import styled from 'styled-components';
 
 const Title =  styled.h1`
@@ -23,8 +22,7 @@ const UserPageWrapper=styled.div`
 
 
 function UserPage(){
-    const {userList,userInfo,setUserInfo,onList} = useContext(userInfoContext);
-    const [a,setA]=useState({id:"",pw:"",grade:""});
+    const {onList} = useContext(userInfoContext);
     return<>
     <Title>{onList.id}님의 UserPage</Title>
    <UserPageWrapper>

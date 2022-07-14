@@ -67,7 +67,7 @@ function LoginPage(){
             }).includes(pwLog)){
                 e.preventDefault();
                 userList.map((i)=>{if(i.id===idLog){setOnList(i);}});
-                Navigate("/");
+                Navigate("/loginForm");
 
                 setLoginToggle(true);
             }

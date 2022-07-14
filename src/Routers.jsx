@@ -39,17 +39,17 @@ function Routers(){
     <>
     <BrowserRouter>
     <LinkMenu>
-        <StyleLink to="/">Home </StyleLink>
-        {loginToggle?<StyleLink to="/UserPage">User </StyleLink>:null}
-        {loginToggle?null:<StyleLink to="/Login">Login </StyleLink>}
-        {loginToggle?null:<StyleLink to="/Join">Join</StyleLink>}
+        <StyleLink to="/loginForm">Home </StyleLink>
+        {loginToggle?<StyleLink to="/loginForm/UserPage">User </StyleLink>:null}
+        {loginToggle?null:<StyleLink to="/loginForm/Login">Login </StyleLink>}
+        {loginToggle?null:<StyleLink to="/loginForm/Join">Join</StyleLink>}
         </LinkMenu>
     <Routes>
         
-        <Route path="/" element={<Main/>}/>
-        <Route path="/UserPage" element={<UserPage/>}/>
-        <Route path="/Login" element={<LoginPage/>}/>
-        <Route path="/Join" element={<JoinPage/>}/>
+        <Route path="/loginForm" element={<Main/>}/>
+        <Route path="/loginForm/UserPage" element={<UserPage/>}/>
+        <Route path="/loginForm/Login" element={<LoginPage/>}/>
+        <Route path="/loginForm/Join" element={<JoinPage/>}/>
     </Routes>
     </BrowserRouter>
     </>

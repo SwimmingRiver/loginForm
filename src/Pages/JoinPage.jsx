@@ -100,7 +100,7 @@ function JoinPage(){
             setUserInfo({id:id,pw:password});
             setUserList([userInfo,...userList]);
             alert("가입 완료")
-            Navigate("/");
+            Navigate("/loginForm");
         }
     }
     const handleChange=(e)=>{
